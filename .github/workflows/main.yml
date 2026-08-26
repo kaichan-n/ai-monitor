@@ -3,7 +3,7 @@ name: AI Monitor
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 15 * * *"
 
 jobs:
   monitor:
@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: リポジトリを取得
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Pythonをセットアップ
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: "3.x"
 
       - name: AI監視エージェントを実行
         run: python main.py
