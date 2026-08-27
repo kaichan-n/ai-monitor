@@ -21,7 +21,12 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Gemini APIライブラリをインストール
+        run: pip install google-genai
+
       - name: AI監視エージェントを実行
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python main.py
 
       - name: 記憶をGitHubに保存
