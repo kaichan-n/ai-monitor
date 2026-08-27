@@ -92,7 +92,7 @@ for article in new_articles:
 
     try:
         result = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3.6-flash",
             contents=prompt
         )
 
